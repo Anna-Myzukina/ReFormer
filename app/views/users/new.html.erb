@@ -1,17 +1,3 @@
-<!--<%= form_tag("/users", method: "post") do %>
-  <%= label_tag(:username, "Username:") %>
-  <%= text_field_tag(:username) %><br>
-
-  <%= label_tag(:email, "email:") %>
-  <%= text_field_tag(:email) %><br>
-
-  <%= label_tag(:password, "password:") %>
-  <%= password_field_tag(:password) %><br>
-
-  <%= submit_tag("Submit") %>
-<% end %>--> 
-
-
 <%= form_for @user do |f| %>
 <ul>
   <% @user.errors.full_messages.each do |error| %>
@@ -24,7 +10,7 @@
 </p>
 <p>
   <%= f.label :email %> <br/>
-  <%= f.text_field :email, :value => "example@email.com" %>
+  <%= f.email_field :email, :value => "example@email.com" %>
 </p>
 <p>
   <%= f.label :password %> <br/>
