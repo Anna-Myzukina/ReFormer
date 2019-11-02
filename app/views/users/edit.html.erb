@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+
+  USERNAME:<%= f.text_field :username %> <br />
+  EMAIL:<%= f.text_field :email, :value => "example@email.com" %> <br />
+  PASSWORD: <%= f.password_field :password %><br />
+  <%= f.submit %>
+  <ul>
+  <% @user.errors.full_messages.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
